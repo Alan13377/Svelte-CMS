@@ -1,11 +1,9 @@
 <script context="module">
-    import { gql, GraphQLClient } from 'graphql-request'
+   import {client} from "$lib/graphql-client"
+   import {gql} from "graphql-request"
   
     export const load = async () => {
-      const client = new GraphQLClient(
-        import.meta.env.VITE_GRAPHQL_API
-      )
-  
+
       const query = gql`
         query GetProjects {
           projects {
